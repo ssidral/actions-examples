@@ -1,0 +1,15 @@
+name: node-action-example
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  node-action-example:
+    runs-on: ubuntu-latest-ppc64le
+    steps:
+      - uses: actions/checkout@v3
+      - uses: adilhusain-s/setup-node@main
+        with:
+          node-version: 18.15.0
+      - run: npm install
