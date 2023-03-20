@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest-ppc64le
     steps:
       - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@main
+      - uses: ruby/setup-ruby@master
         with:
           ruby-version: "3.0" # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
