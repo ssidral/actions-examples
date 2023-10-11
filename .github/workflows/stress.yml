@@ -16,6 +16,8 @@ jobs:
         run: |
           # Writing 60 GB of random data to disk
           dd if=/dev/urandom of=randomdata bs=1M count=60000
+          # install stress 
+          apt install -qqy stress
 
           # Stressing RAM to 5 GB
           stress --vm 1 --vm-bytes 5G --vm-hang 0 --timeout 60
