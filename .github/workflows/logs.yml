@@ -1,10 +1,8 @@
 name: Generate Lots of Logs
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
-
 jobs:
   generate_logs:
     runs-on: ubuntu-latest
