@@ -6,7 +6,7 @@ on:
 
 jobs:
   stress_and_disk_write:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest-ppc64le
 
     steps:
       - name: Checkout code
@@ -18,8 +18,8 @@ jobs:
           dd if=/dev/urandom of=randomdata bs=1M count=60000
 
           # Stressing RAM to 5 GB
-          stress --vm 1 --vm-bytes 5G --vm-hang 0
+          stress --vm 1 --vm-bytes 5G --vm-hang 0 --timeout 60
 
           # Stressing CPU core 4
-          stress --cpu 4
+          stress --cpu 4 --timeout  60
         shell: bash

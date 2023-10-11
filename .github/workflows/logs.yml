@@ -5,7 +5,7 @@ on:
   push:
 jobs:
   generate_logs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-ppc64le
 
     steps:
       - name: Checkout code
