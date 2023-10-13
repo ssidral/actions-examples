@@ -1,8 +1,6 @@
 name: Basic checkout example
 
-on:
-  workflow_dispatch:
-  push:
+on: [workflow_dispatch]
 
 jobs:
   basic-checkout:

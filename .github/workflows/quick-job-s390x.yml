@@ -1,0 +1,14 @@
+name: quick workflow s390x
+
+on: [workflow_dispatch, push, pull_request]
+
+jobs:
+  quick-job-s390x:
+    name: print platform arch
+    runs-on: ubuntu-20.04-s390x
+    steps:
+
+    - name: Run commands
+      run: |
+        uname -a
+        arch

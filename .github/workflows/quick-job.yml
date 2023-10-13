@@ -1,0 +1,14 @@
+name: quick workflow
+
+on: [workflow_dispatch, push, pull_request]
+
+jobs:
+  quick-job:
+    name: print platform arch
+    runs-on: ubuntu-20.04-ppc64le
+    steps:
+
+    - name: Run commands
+      run: |
+        uname -a
+        arch
