@@ -1,4 +1,4 @@
-public class PlatformInfo {
+public class RunnerInfo {
     public static void main(String[] args) {
         // Get the system properties
         String osName = System.getProperty("os.name");
