@@ -1,0 +1,27 @@
+name: Stress and Disk Write
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  stress_and_disk_write:
+    runs-on: ubuntu-latest-ppc64le
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Stress and Disk Write
+        run: |
+          # Writing 60 GB of random data to disk
+          dd if=/dev/urandom of=randomdata bs=1M count=60000
+          # install stress 
+          apt install -qqy stress
+
+          # Stressing RAM to 5 GB
+          stress --vm 1 --vm-bytes 5G --vm-hang 0 --timeout 60
+
+          # Stressing CPU core 4
+          stress --cpu 4 --timeout  60
+        shell: bash
