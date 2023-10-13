@@ -1,4 +1,4 @@
-name: Basic checkout example
+name: checkout  repo
 
 on: [workflow_dispatch]
 
