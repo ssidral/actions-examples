@@ -8,11 +8,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Generate Logs
         run: |
           for i in {1..1000}; do
             echo "Log entry $i"
           done
+          sleep 10m
+          echo "justwoke up"
+          echo "feeling fresh"
         shell: bash
