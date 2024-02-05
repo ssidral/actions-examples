@@ -1,0 +1,26 @@
+name: Dotnet Action Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dotnet-action-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        dotnet: ['7.0.100', '8.0.100']
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+
+      - name: Run Dotnet Version
+        run: |
+          dotnet --version
+          # Additional steps go here if needed
