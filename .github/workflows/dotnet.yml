@@ -1,39 +1,20 @@
-name: Dotnet Action Test
+name: dotnet package
 
-on:
-  workflow_dispatch:
+on: [push]
 
 jobs:
-  dotnet-action-test:
+  build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        dotnet: ['7.0.100', '8.0.100']
+        dotnet-version: ['3.1.x', '6.0.x']
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v4
+      - name: Setup dotnet ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: ${{ matrix.dotnet }}
-
-      - name: Debug PATH for Dotnet Version 7.0.100
-        run: |
-          echo "Current PATH:"
-          echo $PATH
-          echo "Contents of /usr/share/dotnet:"
-          ls -l /usr/share/dotnet
-
-      - name: Print Dotnet Version
-        run: |
-          source /etc/profile
-          source $HOME/.profile
-          dotnet --version
-
-      - name: Find Dotnet Path
-        run: |
-          echo "Path of Dotnet executable:"
-          which dotnet
+          dotnet-version: ${{ matrix.dotnet-version }}
+      # You can test your matrix by printing the current dotnet version
+      - name: Display dotnet version
+        run: dotnet --version
