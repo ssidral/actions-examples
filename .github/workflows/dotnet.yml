@@ -20,9 +20,20 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet }}
 
-      - name: Run Dotnet Version
+      - name: Debug PATH for Dotnet Version 7.0.100
+        run: |
+          echo "Current PATH:"
+          echo $PATH
+          echo "Contents of /usr/share/dotnet:"
+          ls -l /usr/share/dotnet
+
+      - name: Print Dotnet Version
         run: |
           source /etc/profile
           source $HOME/.profile
           dotnet --version
-          # Additional steps go here if needed
+
+      - name: Find Dotnet Path
+        run: |
+          echo "Path of Dotnet executable:"
+          which dotnet
