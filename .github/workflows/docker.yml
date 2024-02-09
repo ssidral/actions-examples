@@ -5,7 +5,10 @@ on:
 
 jobs:
   docker:
-    runs-on: ubuntu-20.04-ppc64le
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-20.04-ppc64le]
     steps:
       - name: Print Linux user
         run: whoami
@@ -17,7 +20,7 @@ jobs:
         run: groups
 
       - name: Check Docker socket access
-        run: sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alpine docker ps
+        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alpine docker ps
 
       - name: Checkout Repository
         uses: actions/checkout@v3
