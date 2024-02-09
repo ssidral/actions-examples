@@ -19,9 +19,6 @@ jobs:
       - name: Print list of groups
         run: groups
 
-      - name: Check Docker socket access
-        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alpine docker ps
-
       - name: Checkout Repository
         uses: actions/checkout@v3
 
