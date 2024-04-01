@@ -1,0 +1,16 @@
+name: fail-at-set-up-job
+
+on: [workflow_dispatch, pull_request]
+
+jobs:
+  print-info:
+    name: failing job
+    runs-on: ubuntu-20.04-ppc64le
+    steps:
+      - uses: action/checkout@v3
+      - name: fail job
+        run: |
+          uname -a
+          arch
+      - name: Pause for 35s
+        run: sleep 2m
