@@ -34,5 +34,5 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          push: false
-          tags: adysh97/http-server:latest
+          push: true
+          tags: ${{ secrets.DOCKER_USER }}/actions-examples:latest
