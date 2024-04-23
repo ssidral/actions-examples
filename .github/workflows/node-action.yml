@@ -1,0 +1,18 @@
+name: node-action-example
+
+on: 
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "run workflow on node-action-example"
+        required: true
+        default: main
+jobs:
+  node-action-example :
+    runs-on: ubuntu-latest-ppc64le
+    steps:
+      - uses: actions/checkout@v3
+      - uses: adilhusain-s/setup-node@main
+        with:
+          node-version: 20
+      - run: npm install
