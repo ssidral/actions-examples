@@ -4,7 +4,7 @@ on: [workflow_dispatch, push]
 
 jobs:
   node-action-example:
-    runs-on: ubuntu-20.04-ppc64le
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
       - uses: adilhusain-s/setup-node@main
