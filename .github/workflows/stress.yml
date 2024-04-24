@@ -6,7 +6,7 @@ on:
 
 jobs:
   stress_and_disk_write:
-    runs-on: ubuntu-latest-ppc64le
+    runs-on: ubuntu-ppc64le-ppc64le
 
     steps:
       - name: Checkout code
