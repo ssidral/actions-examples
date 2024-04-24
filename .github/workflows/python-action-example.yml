@@ -6,7 +6,7 @@ on:
 
 jobs:
   python-action-example:
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04-ppcl64le
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
