@@ -2,10 +2,10 @@ name: Generate Lots of Logs
 
 on:
   workflow_dispatch:
-  push:
+
 jobs:
   generate_logs:
-    runs-on: ubuntu-ppc64le-ppc64le
+    runs-on: ubuntu-20.04-ppc64le
 
     steps:
       - name: Checkout code
