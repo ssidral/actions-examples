@@ -9,9 +9,8 @@ jobs:
     
     steps:
       - uses: action/checkout@v3
+      
       - name: Print System Info
         run: |
           uname -a
           arch
-      - name: Pause for 35s
-        run: sleep 2m
