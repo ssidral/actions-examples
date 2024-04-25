@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-20.04-ppc64le
     
     steps:
+      - uses: action/checkout@v3
       - name: Print System Info
         run: |
           uname -a
