@@ -1,4 +1,4 @@
-name: sleep 20 minutes
+name: hello message  
 
 on: [workflow_dispatch, pull_request]
 
