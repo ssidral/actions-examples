@@ -12,5 +12,4 @@ jobs:
         run: |
           uname -a
           arch
-      - name: Pause for 35s
-        run: sleep 2m
+
