@@ -13,3 +13,5 @@ jobs:
           arch
       - name: Hello messge
         run: echo "Hello welcome!"
+      - name: list files
+        run: ls
