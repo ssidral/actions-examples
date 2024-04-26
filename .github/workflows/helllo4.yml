@@ -1,0 +1,18 @@
+name: hello message 4
+
+on: [workflow_dispatch]
+
+jobs:
+  print-info:
+    name: Display Platform Info 4
+    runs-on: ubuntu-20.04-ppc64le
+    steps:
+      - uses: actions/checkout@v3
+      - name: Print System Info
+        run: |
+          uname -a
+          arch
+      - name: Hello messge
+        run: echo "Hello welcome!"
+      - name: list files
+        run: ls
