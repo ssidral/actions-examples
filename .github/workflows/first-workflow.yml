@@ -4,6 +4,6 @@ on: [workflow_dispatch]
 
 jobs:
   ruby:
-    runs-on: ubuntu-20.04-ppc64le
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
